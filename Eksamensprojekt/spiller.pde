@@ -1,6 +1,7 @@
-class Spiller extends Terninger{
+class Spiller{
   int antalFælter,diameter,spillepladeDIA;
   float p1x,p2x;
+  
   
   Spiller(){
     antalFælter=32;
@@ -11,11 +12,12 @@ class Spiller extends Terninger{
     
   }
   
-  
-  
-  void show(){
+  void værdiTerning(){
     int nyVærdi = terninger.getNyVærdi();
     println(nyVærdi);
+  }
+  
+  void show(){
     for(int i = 0; i < antalFælter; i++){
       pushMatrix();
       translate(width/2, height/2);

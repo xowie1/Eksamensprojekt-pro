@@ -14,8 +14,10 @@ void draw(){
   terninger.show();
   visPlade.show(150);
   spiller.show();
+  
 }
 
 void mouseReleased(){
   terninger.roll();
+  spiller.værdiTerning();
 }
