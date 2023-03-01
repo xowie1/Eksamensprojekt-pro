@@ -4,7 +4,8 @@ class Terninger{
   Terninger(){
     x = width/2;
     y = 50;
-    værdi = int(random(0,7)); 
+    værdi = int(random(1,7));
+    
   }
   
   void show(){
@@ -79,4 +80,12 @@ class Terninger{
       pop();
     }
   }
+  
+  void roll(){
+    værdi = int(random(1,7));
+  
+  }
+  
+  
+  
 }
