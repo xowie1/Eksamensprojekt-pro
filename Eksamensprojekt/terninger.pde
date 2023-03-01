@@ -155,5 +155,8 @@ class Terninger{
     værdi2 = int(random(1,7));
     nyVærdi = værdi + værdi2;
   }
+    public int getNyVærdi() {
+    return nyVærdi;
+  }
   
 }

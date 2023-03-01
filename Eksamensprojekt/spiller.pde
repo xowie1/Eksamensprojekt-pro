@@ -3,7 +3,6 @@ class Spiller extends Terninger{
   float p1x,p2x;
   
   Spiller(){
-
     antalFælter=32;
     spillepladeDIA=650;
     diameter=spillepladeDIA/3+(spillepladeDIA/24);
@@ -15,6 +14,8 @@ class Spiller extends Terninger{
   
   
   void show(){
+    int nyVærdi = terninger.getNyVærdi();
+    println(nyVærdi);
     for(int i = 0; i < antalFælter; i++){
       pushMatrix();
       translate(width/2, height/2);
