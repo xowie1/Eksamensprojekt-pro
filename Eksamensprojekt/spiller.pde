@@ -2,9 +2,9 @@ class Spiller{
   int p1x,p1y,p2x,p2y;
   
   Spiller(){
-    p1x = width/2;
+    p1x = width/2-20;
     p1y = 625;
-    p2x=width/2;
+    p2x=width/2-26;
     p2y=675;
   }
   
