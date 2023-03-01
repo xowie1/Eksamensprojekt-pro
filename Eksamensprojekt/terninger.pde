@@ -11,6 +11,7 @@ class Terninger{
     println(værdi);
     rectMode(CENTER);
     if(værdi == 1){
+      fill(255);
       rect(x,y,40,40);
       push();
       fill(0);
@@ -19,6 +20,7 @@ class Terninger{
   }
     
     if(værdi == 2){
+      fill(255);
       rect(x,y,40,40);
       push();
       fill(0);
@@ -28,6 +30,7 @@ class Terninger{
     }
     
     if(værdi == 3){
+      fill(255);
       rect(x,y,40,40);
       push();
       fill(0);
@@ -38,6 +41,7 @@ class Terninger{
     }
     
     if(værdi == 4){
+      fill(255);
       rect(x,y,40,40);
       push();
       fill(0);
@@ -49,6 +53,7 @@ class Terninger{
     }
     
     if(værdi == 5){
+      fill(255);
       rect(x,y,40,40);
       push();
       fill(0);
@@ -61,6 +66,7 @@ class Terninger{
     }
     
     if(værdi == 6){
+      fill(255);
       rect(x,y,40,40);
       push();
       fill(0);

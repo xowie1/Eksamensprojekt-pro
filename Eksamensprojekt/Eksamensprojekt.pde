@@ -10,4 +10,5 @@ void draw(){
   background(150);
   terninger.show();
   visPlade.show(150);
+  
 }
