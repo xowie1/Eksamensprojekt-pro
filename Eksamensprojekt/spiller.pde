@@ -1,4 +1,4 @@
-class Spiller{
+class Spiller extends Terninger{
   int antalFælter,diameter,spillepladeDIA;
   float p1x,p2x;
   
@@ -9,7 +9,10 @@ class Spiller{
     diameter=spillepladeDIA/3+(spillepladeDIA/24);
     p1x = antalFælter/1.5;
     p2x = antalFælter/1.25;
+    
   }
+  
+  
   
   void show(){
     for(int i = 0; i < antalFælter; i++){
@@ -21,6 +24,7 @@ class Spiller{
       fill(137, 207, 240);
       circle(p2x,diameter*1.25,20);
       popMatrix();
+      
   }
 
   } 

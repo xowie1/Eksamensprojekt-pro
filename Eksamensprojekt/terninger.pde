@@ -4,12 +4,8 @@ class Terninger{
   Terninger(){
     x = width/2;
     y = 50;
-    værdi = int(random(1,7));
-    værdi2 = int(random(1,7));
-    nyVærdi = værdi + værdi2; 
-    println(nyVærdi);
-   
     
+  
   }
   
   void show(){
@@ -157,8 +153,7 @@ class Terninger{
   void roll(){
     værdi = int(random(1,7));
     værdi2 = int(random(1,7));
-    nyVærdi = værdi + værdi2; 
-    println(nyVærdi);
+    nyVærdi = værdi + værdi2;
   }
   
 }
