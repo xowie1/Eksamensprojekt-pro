@@ -1,5 +1,5 @@
 class spillePlade{
-int diameter = 600;
+int diameter = 650;
 int feltLength = diameter/3+(diameter/48);
 int indreDiameter = diameter*2/3;
 float radian = 6.28318531; //360 grader i radianer
