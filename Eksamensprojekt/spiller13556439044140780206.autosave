@@ -1,7 +1,6 @@
-class Spiller{
-  int antalFælter,diameter,spillepladeDIA,nyVærdi,antalRyk;
+class Spiller extends Terninger{
+  int antalFælter,diameter,spillepladeDIA;
   float p1x,p2x;
-  
   
   Spiller(){
     antalFælter=32;
@@ -12,16 +11,11 @@ class Spiller{
     
   }
   
-  void værdiTerning(){
-    nyVærdi = terninger.getNyVærdi();
-    println(nyVærdi);
-  }
   
-  void beregnGaaAfstand(){
-    antalRyk=nyVærdi;
-  }
   
   void show(){
+    int nyVærdi = terninger.getNyVærdi();
+    println(nyVærdi);
     for(int i = 0; i < antalFælter; i++){
       pushMatrix();
       translate(width/2, height/2);
@@ -33,7 +27,6 @@ class Spiller{
       popMatrix();
       
   }
-
   } 
 
 }
