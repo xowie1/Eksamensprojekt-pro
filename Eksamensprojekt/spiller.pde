@@ -19,12 +19,11 @@ class Spiller{
     println(nyVærdi);
   }
   void spillerSkifter(){
-    if(spiller1 && mousePressed
+    if(spiller1 && mousePressed);
   }
  
   void show(){
     translate(width/2, height/2);
-    println(nyVærdi);
     rotate((TWO_PI/antalFælter)*nyVærdi);
     fill(215, 0, 64);
     circle(p1x,diameter,20);
