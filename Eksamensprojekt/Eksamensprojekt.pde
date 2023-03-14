@@ -15,7 +15,7 @@ void draw(){
   terninger.show();
   visPlade.show(150);
   spiller.show();
-  spiller.show2();
+
   
 }
 

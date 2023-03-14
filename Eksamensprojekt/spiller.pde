@@ -20,33 +20,29 @@ class Spiller{
     if(spiller == true){
     nyVærdi = terninger.getNyVærdi();
     nuværendeFelt=nuværendeFelt+nyVærdi;
-    println(nuværendeFelt);
+    println(nuværendeFelt%32);
     
-    }
-    
-    spiller = !spiller;
-    
-    if(spiller ==false){
+    }else{
       nyVærdi2 = terninger.getNyVærdi();
-      nuværendeFelt2 = nuværendeFelt2+nyVærdi2-nyVærdi;
+      nuværendeFelt2 = nuværendeFelt2+nyVærdi2;
     }
+    spiller = !spiller;
   }
   
  
   void show(){
     translate(width/2, height/2);
+      push();
       rotate((TWO_PI/antalFælter)*nuværendeFelt);
       fill(215, 0, 64);
       circle(p1x,diameter,20);
-    
+      pop();
+      
+      push();
+      rotate((TWO_PI/antalFælter)*nuværendeFelt2);
+        fill(137, 207, 240);
+        circle(p2x,diameter*1.25,20);
+      pop();
+       
   }
-  
-  void show2(){
-    rotate((TWO_PI/antalFælter)*nuværendeFelt2);
-      fill(137, 207, 240);
-      circle(p2x,diameter*1.25,20);
-  }
-  
- 
-
 }
