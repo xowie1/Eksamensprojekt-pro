@@ -22,6 +22,12 @@ class Spiller{
   }
   
   void show(){
+    translate(width/2, height/2);
+    println(nyVærdi);
+    rotate((TWO_PI/antalFælter)*nyVærdi);
+    fill(215, 0, 64);
+    circle(p1x,diameter,20);
+    /*
     for(int i = 0; i < antalFælter; i++){
       pushMatrix();
       translate(width/2, height/2);
@@ -33,7 +39,8 @@ class Spiller{
       popMatrix();
       
   }
-
+  */
+  
   } 
 
 }
