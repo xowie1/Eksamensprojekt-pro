@@ -1,16 +1,16 @@
 class Spiller{
-  int antalFælter,diameter,spillepladeDIA,nyVærdi,nyVærdi2,antalRyk,nuværendeFelt,nuværendeFelt2;
+  int spillepladeFelter,diameter,spillepladeDIA,nyVærdi,nyVærdi2,antalRyk,nuværendeFelt,nuværendeFelt2;
   float p1x,p2x;
   boolean spiller;
   
   
   Spiller(){
     spiller=true;
-    antalFælter=32;
+    spillepladeFelter=32;
     spillepladeDIA=650;
     diameter=spillepladeDIA/3+(spillepladeDIA/24);
-    p1x = antalFælter/1.5;
-    p2x = antalFælter/1.25;
+    p1x = spillepladeFelter/1.5;
+    p2x = spillepladeFelter/1.25;
     nuværendeFelt = 0;
     nuværendeFelt2 = 0; 
      
@@ -33,13 +33,13 @@ class Spiller{
   void show(){
     translate(width/2, height/2);
       push();
-      rotate((TWO_PI/antalFælter)*nuværendeFelt);
+      rotate((TWO_PI/spillepladeFelter)*nuværendeFelt);
       fill(215, 0, 64);
       circle(p1x,diameter,20);
       pop();
       
       push();
-      rotate((TWO_PI/antalFælter)*nuværendeFelt2);
+      rotate((TWO_PI/spillepladeFelter)*nuværendeFelt2);
         fill(137, 207, 240);
         circle(p2x,diameter*1.25,20);
       pop();
