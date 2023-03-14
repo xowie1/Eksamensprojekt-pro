@@ -11,6 +11,7 @@ void setup(){
 
 void draw(){
   background(150);
+  spiller.beregnGaaAfstand();
   terninger.show();
   visPlade.show(150);
   spiller.show();
