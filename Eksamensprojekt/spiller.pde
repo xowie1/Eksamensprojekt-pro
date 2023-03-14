@@ -35,14 +35,10 @@ class Spiller{
  
   void show(){
     translate(width/2, height/2);
-    
       rotate((TWO_PI/antalFælter)*nuværendeFelt);
       fill(215, 0, 64);
       circle(p1x,diameter,20);
     
-    
-    
-      
   }
   
   void show2(){
