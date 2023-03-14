@@ -12,11 +12,11 @@ int antalFælter = 32;
     
     
     for(int i = 0; i < antalFælter; i++){
-      pushMatrix();
+      push();
       translate(width/2, height/2);
       rotate((TWO_PI/antalFælter)*i);
       line(0, 0,feltLength,feltLength);
-      popMatrix();
+      pop();
   }
     fill(bg);
     circle(width/2, height/2, indreDiameter);
