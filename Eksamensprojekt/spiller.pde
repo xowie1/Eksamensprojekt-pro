@@ -1,9 +1,11 @@
 class Spiller{
   int antalFælter,diameter,spillepladeDIA,nyVærdi,antalRyk;
   float p1x,p2x;
+  boolean spiller1;
   
   
   Spiller(){
+    spiller1=true;
     antalFælter=32;
     spillepladeDIA=650;
     diameter=spillepladeDIA/3+(spillepladeDIA/24);
@@ -16,11 +18,10 @@ class Spiller{
     nyVærdi = terninger.getNyVærdi();
     println(nyVærdi);
   }
-  
-  void beregnGaaAfstand(){
-    antalRyk=nyVærdi;
+  void spillerSkifter(){
+    if(spiller1 && mousePressed
   }
-  
+ 
   void show(){
     translate(width/2, height/2);
     println(nyVærdi);

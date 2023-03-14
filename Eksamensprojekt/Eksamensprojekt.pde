@@ -2,6 +2,7 @@ Terninger terninger;
 spillePlade visPlade;
 Spiller spiller;
 
+
 void setup(){
   size(800,800);
   visPlade = new spillePlade();
@@ -11,7 +12,7 @@ void setup(){
 
 void draw(){
   background(150);
-  spiller.beregnGaaAfstand();
+  spiller.værdiTerning();
   terninger.show();
   visPlade.show(150);
   spiller.show();
