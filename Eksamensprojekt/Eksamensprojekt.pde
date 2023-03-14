@@ -12,14 +12,15 @@ void setup(){
 
 void draw(){
   background(150);
-  spiller.værdiTerning();
   terninger.show();
   visPlade.show(150);
   spiller.show();
+  spiller.show2();
   
 }
 
 void mouseReleased(){
   terninger.roll();
   spiller.værdiTerning();
+
 }

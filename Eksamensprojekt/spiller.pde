@@ -1,46 +1,56 @@
 class Spiller{
-  int antalFælter,diameter,spillepladeDIA,nyVærdi,antalRyk;
+  int antalFælter,diameter,spillepladeDIA,nyVærdi,nyVærdi2,antalRyk,nuværendeFelt,nuværendeFelt2;
   float p1x,p2x;
-  boolean spiller1;
+  boolean spiller;
   
   
   Spiller(){
-    spiller1=true;
+    spiller=true;
     antalFælter=32;
     spillepladeDIA=650;
     diameter=spillepladeDIA/3+(spillepladeDIA/24);
     p1x = antalFælter/1.5;
     p2x = antalFælter/1.25;
-    
+    nuværendeFelt = 0;
+    nuværendeFelt2 = 0; 
+     
   }
   
   void værdiTerning(){
+    if(spiller == true){
     nyVærdi = terninger.getNyVærdi();
-    println(nyVærdi);
+    nuværendeFelt=nuværendeFelt+nyVærdi;
+    println(nuværendeFelt);
+    
+    }
+    
+    spiller = !spiller;
+    
+    if(spiller ==false){
+      nyVærdi2 = terninger.getNyVærdi();
+      nuværendeFelt2 = nuværendeFelt2+nyVærdi2-nyVærdi;
+    }
   }
-  void spillerSkifter(){
-    if(spiller1 && mousePressed);
-  }
+  
  
   void show(){
     translate(width/2, height/2);
-    rotate((TWO_PI/antalFælter)*nyVærdi);
-    fill(215, 0, 64);
-    circle(p1x,diameter,20);
-    /*
-    for(int i = 0; i < antalFælter; i++){
-      pushMatrix();
-      translate(width/2, height/2);
-      rotate((TWO_PI/antalFælter)*i);
+    
+      rotate((TWO_PI/antalFælter)*nuværendeFelt);
       fill(215, 0, 64);
       circle(p1x,diameter,20);
-      fill(137, 207, 240);
-      circle(p2x,diameter*1.25,20);
-      popMatrix();
+    
+    
+    
       
   }
-  */
   
-  } 
+  void show2(){
+    rotate((TWO_PI/antalFælter)*nuværendeFelt2);
+      fill(137, 207, 240);
+      circle(p2x,diameter*1.25,20);
+  }
+  
+ 
 
 }
