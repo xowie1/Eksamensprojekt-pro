@@ -2,8 +2,7 @@ class Penge{
   int penge1,penge2,nuværendeFelt,nyVærdi; 
   
   Penge(){
-    nuværendeFelt = spiller.NuværendeFelt();
-    nyVærdi = terninger.getNyVærdi();
+    
     penge1 = 8000;
     penge2 = 8000;
   }
@@ -11,9 +10,12 @@ class Penge{
   
   
   void update(){
+    nuværendeFelt = spiller.NuværendeFelt();
+    nyVærdi = terninger.getNyVærdi();
+    println(nuværendeFelt%32);
     if(nuværendeFelt%32 > (nuværendeFelt+nyVærdi)%32){
-    pengeRød = pengeRød + 3000;
-    println(pengeRød);
+    penge1 = penge1 + 3000;
+    println(penge1);
     }
   }
   

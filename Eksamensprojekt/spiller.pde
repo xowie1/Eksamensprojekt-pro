@@ -23,7 +23,7 @@ class Spiller{
     if(spiller == true){
     nyVærdi = terninger.getNyVærdi();
     nuværendeFelt=nuværendeFelt+nyVærdi;
-    println(nuværendeFelt%32);
+    
     
     }else{
       nyVærdi2 = terninger.getNyVærdi();
