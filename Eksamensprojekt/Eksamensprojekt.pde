@@ -1,6 +1,7 @@
 Terninger terninger;
 spillePlade visPlade;
 Spiller spiller;
+Penge penge;
 
 
 void setup(){
@@ -8,6 +9,8 @@ void setup(){
   visPlade = new spillePlade();
   terninger = new Terninger();
   spiller = new Spiller();
+  penge = new Penge();
+  
 }
 
 void draw(){
@@ -15,6 +18,7 @@ void draw(){
   terninger.show();
   visPlade.show(150);
   spiller.show();
+  penge.show();
 
   
 }

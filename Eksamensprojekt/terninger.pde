@@ -4,8 +4,6 @@ class Terninger{
   Terninger(){
     x = width/2;
     y = 50;
-    
-  
   }
   
   void show(){
