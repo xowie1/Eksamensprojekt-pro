@@ -25,10 +25,10 @@ class Spiller{
     nuværendeFelt=nuværendeFelt+nyVærdi;
     
     
-    }else{
+    }/*else{
       nyVærdi2 = terninger.getNyVærdi();
       nuværendeFelt2 = nuværendeFelt2+nyVærdi2;
-    }
+    }*/
     spiller = !spiller;
   }
   

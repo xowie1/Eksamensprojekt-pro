@@ -19,7 +19,7 @@ void draw(){
   visPlade.show(150);
   spiller.show();
   penge.show();
-  penge.update();
+  
  
 
   
@@ -28,5 +28,6 @@ void draw(){
 void mouseReleased(){
   terninger.roll();
   spiller.værdiTerning();
+  penge.update();
 
 }
