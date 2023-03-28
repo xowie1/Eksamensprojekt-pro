@@ -1,5 +1,7 @@
 class Spiller{
-  int spillepladeFelter,diameter,spillepladeDIA,nyVærdi,nyVærdi2,antalRyk,nuværendeFelt,nuværendeFelt2;
+  int spillepladeFelter,diameter,spillepladeDIA,nyVærdi,nyVærdi2;
+  int antalRyk,nuværendeFelt,nuværendeFelt2;
+  int pengeRød, pengeBlå; 
   float p1x,p2x;
   boolean spiller;
   
@@ -13,6 +15,7 @@ class Spiller{
     p2x = spillepladeFelter/1.25;
     nuværendeFelt = 0;
     nuværendeFelt2 = 0; 
+    pengeRød = 8000; 
      
   }
   
@@ -28,6 +31,10 @@ class Spiller{
     }
     spiller = !spiller;
   }
+  
+    public int NuværendeFelt(){
+      return nuværendeFelt; 
+    }
   
  
   void show(){

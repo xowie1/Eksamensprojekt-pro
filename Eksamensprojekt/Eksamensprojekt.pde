@@ -19,6 +19,8 @@ void draw(){
   visPlade.show(150);
   spiller.show();
   penge.show();
+  penge.update();
+ 
 
   
 }
