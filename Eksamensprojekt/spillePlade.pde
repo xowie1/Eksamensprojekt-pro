@@ -20,14 +20,16 @@ int spillepladeFelter = 29;
     
     fill(bg);
     circle(width/2, height/2, indreDiameter);
-    fill(0);
+    fill(60,179,113);
     textSize(15);
     text("START",width/2-15,715);
+    
     
     for(int j = 1; j < 5; j++){ 
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(j*7-3));
+    fill(255,215, 0);
     text("lykken",-20,312);
     pop();
     }
@@ -35,6 +37,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("4000 kr",-20,312);
     pop();
     }
@@ -42,6 +45,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("2000 kr",-20,312);
     pop();
     }
@@ -49,6 +53,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("5000 kr",-20,312);
     pop();
     }
@@ -56,6 +61,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("3000 kr",-20,312);
     pop();
     }
@@ -63,6 +69,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("2000 kr",-20,312);
     pop();
     }
@@ -70,6 +77,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("4000 kr",-20,312);
     pop();
     }
@@ -77,6 +85,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("3000 kr",-20,312);
     pop();
     }
@@ -84,6 +93,7 @@ int spillepladeFelter = 29;
     push();
     translate(width/2, height/2);
     rotate((TWO_PI/spillepladeFelter)*(i));
+    fill(0);
     text("2000 kr",-20,312);
     pop();
     }
