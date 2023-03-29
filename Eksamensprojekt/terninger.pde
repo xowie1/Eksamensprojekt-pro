@@ -1,160 +1,73 @@
-class Terninger{
-  int x,y,værdi,værdi2,nyVærdi;
+class Terning{
+  int x,y,value;
   
-  Terninger(){
-    x = width/2;
+  Terning(int a){
+    x = a;
     y = 50;
   }
   
   void show(){
     rectMode(CENTER);
-    if(værdi == 1){
+    if(value == 1){
       fill(255);
-      rect(x-30,y,40,40);
-      push();
+      rect(x,y,40,40);
       fill(0);
-      circle(x-30,y,6);
-      pop();
+      circle(x,y,6);
   }
     
-    if(værdi == 2){
+    if(value == 2){
       fill(255);
-      rect(x-30,y,40,40);
-      push();
+      rect(x,y,40,40);
       fill(0);
-      circle(x-8-30,y-8,6);
-      circle(x+8-30,y+8,6);
-      pop();
+      circle(x-8,y-8,6);
+      circle(x+8,y+8,6);
     }
     
-    if(værdi == 3){
+    if(value == 3){
       fill(255);
-      rect(x-30,y,40,40);
-      push();
+      rect(x,y,40,40);
       fill(0);
-      circle(x-30,y,6);
-      circle(x-8-30,y-8,6);
-      circle(x+8-30,y+8,6);
-      pop();
+      circle(x,y,6);
+      circle(x-8,y-8,6);
+      circle(x+8,y+8,6);
     }
     
-    if(værdi == 4){
+    if(value == 4){
       fill(255);
-      rect(x-30,y,40,40);
-      push();
+      rect(x,y,40,40);
       fill(0);
-      circle(x-8-30,y-8,6);
-      circle(x+8-30,y+8,6);
-      circle(x+8-30,y-8,6);
-      circle(x-8-30,y+8,6);
-      pop();
+      circle(x-8,y-8,6);
+      circle(x+8,y+8,6);
+      circle(x+8,y-8,6);
+      circle(x-8,y+8,6);
     }
     
-    if(værdi == 5){
+    if(value == 5){
       fill(255);
-      rect(x-30,y,40,40);
-      push();
+      rect(x,y,40,40);
       fill(0);
-      circle(x-8-30,y-8,6);
-      circle(x+8-30,y+8,6);
-      circle(x+8-30,y-8,6);
-      circle(x-8-30,y+8,6);
-      circle(x-30,y,6);
-      pop();
+      circle(x-8,y-8,6);
+      circle(x+8,y+8,6);
+      circle(x+8,y-8,6);
+      circle(x-8,y+8,6);
+      circle(x,y,6);
     }
     
-    if(værdi == 6){
+    if(value == 6){
       fill(255);
-      rect(x-30,y,40,40);
-      push();
+      rect(x,y,40,40);
       fill(0);
-      circle(x-8-30,y-12,6);
-      circle(x+8-30,y+12,6);
-      circle(x+8-30,y-12,6);
-      circle(x-8-30,y+12,6);
-      circle(x+8-30,y,6);
-      circle(x-8-30,y,6);
-      pop();
+      circle(x-8,y-12,6);
+      circle(x+8,y+12,6);
+      circle(x+8,y-12,6);
+      circle(x-8,y+12,6);
+      circle(x+8,y,6);
+      circle(x-8,y,6);
     }
-    
-    if(værdi2 == 1){
-      fill(255);
-      rect(x+30,y,40,40);
-      push();
-      fill(0);
-      circle(x+30,y,6);
-      pop();
-  }
-    
-    if(værdi2 == 2){
-      fill(255);
-      rect(x+30,y,40,40);
-      push();
-      fill(0);
-      circle(x-8+30,y-8,6);
-      circle(x+8+30,y+8,6);
-      pop();
-    }
-    
-    if(værdi2 == 3){
-      fill(255);
-      rect(x+30,y,40,40);
-      push();
-      fill(0);
-      circle(x+30,y,6);
-      circle(x-8+30,y-8,6);
-      circle(x+8+30,y+8,6);
-      pop();
-    }
-    
-    if(værdi2 == 4){
-      fill(255);
-      rect(x+30,y,40,40);
-      push();
-      fill(0);
-      circle(x-8+30,y-8,6);
-      circle(x+8+30,y+8,6);
-      circle(x+8+30,y-8,6);
-      circle(x-8+30,y+8,6);
-      pop();
-    }
-    
-    if(værdi2 == 5){
-      fill(255);
-      rect(x+30,y,40,40);
-      push();
-      fill(0);
-      circle(x-8+30,y-8,6);
-      circle(x+8+30,y+8,6);
-      circle(x+8+30,y-8,6);
-      circle(x-8+30,y+8,6);
-      circle(x+30,y,6);
-      pop();
-    }
-    
-    if(værdi2 == 6){
-      fill(255);
-      rect(x+30,y,40,40);
-      push();
-      fill(0);
-      circle(x-8+30,y-12,6);
-      circle(x+8+30,y+12,6);
-      circle(x+8+30,y-12,6);
-      circle(x-8+30,y+12,6);
-      circle(x+8+30,y,6);
-      circle(x-8+30,y,6);
-      pop();
-    }
-    
   }
   
-  void roll(){
-    værdi = int(random(1,7));
-    værdi2 = int(random(1,7));
-    nyVærdi = værdi + værdi2;
+  int roll(){
+    value = int(random(1,7));
+    return value;
   }
-    public int getNyVærdi() {
-    return nyVærdi;
-  }
-  
 }

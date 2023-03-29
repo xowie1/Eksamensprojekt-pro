@@ -10,8 +10,8 @@ class Penge{
   
   
   void update(){
-    nuværendeFelt = spiller.NuværendeFelt();
-    nyVærdi = terninger.getNyVærdi();
+    //nuværendeFelt = spiller.NuværendeFelt();
+    //nyVærdi = terninger.getNyVærdi();
     println(nuværendeFelt%32);
     println(nyVærdi);
     //println((nyVærdi+nuværendeFelt)%32);

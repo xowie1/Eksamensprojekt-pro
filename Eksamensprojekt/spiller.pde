@@ -1,55 +1,43 @@
 class Spiller{
-  int spillepladeFelter,diameter,spillepladeDIA,nyVærdi,nyVærdi2;
-  int antalRyk,nuværendeFelt,nuværendeFelt2;
-  int pengeRød, pengeBlå; 
-  float p1x,p2x;
+  int spillepladeFelter,spillepladeDIA;
+  int posPlade,oldPlade;
+  int penge; 
+  int x,y;
   boolean spiller;
   
   
-  Spiller(){
+  Spiller(int a,int b){
     spiller=true;
     spillepladeFelter=32;
     spillepladeDIA=650;
-    diameter=spillepladeDIA/3+(spillepladeDIA/24);
-    p1x = spillepladeFelter/1.5;
-    p2x = spillepladeFelter/1.25;
-    nuværendeFelt = 0;
-    nuværendeFelt2 = 0; 
-    pengeRød = 8000; 
+    x = a;
+    y = b;
+    posPlade = 0; 
+    penge = 8000; 
      
   }
   
-  void værdiTerning(){
-    if(spiller == true){
-    nyVærdi = terninger.getNyVærdi();
-    nuværendeFelt=nuværendeFelt+nyVærdi;
-    
-    
-    }/*else{
-      nyVærdi2 = terninger.getNyVærdi();
-      nuværendeFelt2 = nuværendeFelt2+nyVærdi2;
-    }*/
-    spiller = !spiller;
+  void roll(){
+    oldPlade=posPlade;
+    posPlade+=terning1.roll();
+    posPlade+=terning2.roll();
   }
   
-    public int NuværendeFelt(){
-      return nuværendeFelt; 
-    }
-  
- 
   void show(){
+    push();
     translate(width/2, height/2);
-      push();
-      rotate((TWO_PI/spillepladeFelter)*nuværendeFelt);
-      fill(215, 0, 64);
-      circle(p1x,diameter,20);
-      pop();
       
-      push();
-      rotate((TWO_PI/spillepladeFelter)*nuværendeFelt2);
-        fill(137, 207, 240);
-        circle(p2x,diameter*1.25,20);
-      pop();
-       
+      rotate((TWO_PI/spillepladeFelter)*posPlade);
+      fill(215, 0, 64);
+      circle(x,y,20);
+      pop(); 
+      
+  }
+  
+  void pengeUpdate(){
+    if(posPlade%32 > (oldPlade+posPlade)%32){
+    penge = penge + 3000;
+    println(penge);
+  }
   }
 }

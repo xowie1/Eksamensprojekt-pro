@@ -1,33 +1,43 @@
-Terninger terninger;
+Terning terning1;
+Terning terning2;
 spillePlade visPlade;
-Spiller spiller;
+Spiller spiller1;
+Spiller spiller2;
 Penge penge;
+boolean tur = true;
 
 
 void setup(){
   size(800,800);
   visPlade = new spillePlade();
-  terninger = new Terninger();
-  spiller = new Spiller();
+  terning1 = new Terning(width/2-30);
+  terning2 = new Terning(width/2+30);
+  spiller1 = new Spiller(30,260);
+  spiller2 = new Spiller(30,290);
   penge = new Penge();
   
 }
 
 void draw(){
   background(150);
-  terninger.show();
+  terning1.show();
+  terning2.show();
   visPlade.show(150);
-  spiller.show();
-  penge.show();
+  spiller1.show();
+  spiller2.show();
   
- 
-
   
 }
 
 void mouseReleased(){
-  terninger.roll();
-  spiller.værdiTerning();
-  penge.update();
+  if(tur == true){
+  spiller1.roll();
+  tur = !tur;
+  }else{
+    spiller2.roll();
+    tur = !tur;
+  }
+  spiller1.pengeUpdate();
+  spiller2.pengeUpdate();
 
 }
