@@ -4,7 +4,7 @@ class Spiller{
   int penge; 
   int x,y,r,g,b,yText,bKort;
   int mode;
-  boolean spiller;
+  boolean spiller,kort;
   
   
   Spiller(int a,int b,int rr,int gg, int bb,int yTekst){
@@ -21,6 +21,7 @@ class Spiller{
     yText = yTekst;
     mode = 2; 
     bKort = 130;
+    kort = true;
   }
   
   void roll(){
@@ -33,13 +34,10 @@ class Spiller{
   void lykken(){
     if (posPlade%spillepladeFelter == 4 || posPlade%spillepladeFelter == 11 || posPlade%spillepladeFelter == 18 || posPlade%spillepladeFelter == 25 ){
       mode = int (random(2));
-      
       if(mode == 0){
       penge += 1000;
-      
     }else{
       penge -= 1000;
-      
     }
     }
   }
@@ -62,6 +60,7 @@ class Spiller{
       fill(0);
       textSize(15);
       text("Du vandt 1000 kr", width/2-50,height/2);
+      
     }
     if (mode ==1){
       fill(255);
@@ -69,7 +68,8 @@ class Spiller{
       fill(0);
       textSize(15);
       text("Du taber 1000 kr", width/2-50,height/2);
-    }
+      
+    }  
   }
   
   void pengeUpdate(){
