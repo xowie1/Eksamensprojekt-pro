@@ -12,8 +12,8 @@ void setup(){
   visPlade = new spillePlade();
   terning1 = new Terning(width/2-30);
   terning2 = new Terning(width/2+30);
-  spiller1 = new Spiller(5,255,135,206,150,30);
-  spiller2 = new Spiller(5,285,220, 20, 60,65);
+  spiller1 = new Spiller(5,255,135,206,150,30,0);
+  spiller2 = new Spiller(5,285,220, 20, 60,65,1);
     for(int i = 0; i < 12; i++){
     grunde.add(new Grund(
     grundData[(4*i)+0],

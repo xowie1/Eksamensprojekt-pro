@@ -1,13 +1,14 @@
 class Spiller{
   int spillepladeFelter,spillepladeDIA;
   int posPlade,oldPlade;
-  int penge; 
+  int penge;
+  int spillerNummer;
   int x,y,r,g,b,yText,bKort;
   int mode;
   boolean spiller,kort;
   
   
-  Spiller(int a,int b,int rr,int gg, int bb,int yTekst){
+  Spiller(int a,int b,int rr,int gg, int bb,int yTekst,int _spillerNummer){
     spiller=true;
     spillepladeFelter=29;
     spillepladeDIA=650;
@@ -22,6 +23,7 @@ class Spiller{
     mode = 2; 
     bKort = 130;
     kort = true;
+    spillerNummer=_spillerNummer;
   }
   
   void roll(){
@@ -75,8 +77,14 @@ class Spiller{
   void pengeUpdate(){
     if(oldPlade%spillepladeFelter > posPlade%spillepladeFelter){
     penge = penge + 3000;  
-    }
+    }}
+  void grundKøb(){
+    if(spillerNummer == 2){
+      //hvis grundplade == 0 skal man have mulighed for at købe eller ej
+      //men hvis grundplade !=spillernummer || 0 skal man betale til den anden spiller
     
     }
+    
+  }
   
 }
