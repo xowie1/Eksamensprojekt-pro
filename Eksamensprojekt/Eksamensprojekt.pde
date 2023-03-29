@@ -3,7 +3,6 @@ Terning terning2;
 spillePlade visPlade;
 Spiller spiller1;
 Spiller spiller2;
-Penge penge;
 boolean tur = true;
 
 
@@ -12,9 +11,8 @@ void setup(){
   visPlade = new spillePlade();
   terning1 = new Terning(width/2-30);
   terning2 = new Terning(width/2+30);
-  spiller1 = new Spiller(30,260);
-  spiller2 = new Spiller(30,290);
-  penge = new Penge();
+  spiller1 = new Spiller(30,260,135,206,150);
+  spiller2 = new Spiller(30,290,220, 20, 60);
   
 }
 
