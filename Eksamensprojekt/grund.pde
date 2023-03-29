@@ -1,13 +1,9 @@
 class Grund{
-  int pris , ejer;
-  int[] pos;
-  Grund(int size,int aPris){
-    pos = new int[size];
-    ejer = 0;
-    pris = aPris;
+  int pos,pris,leje,ejer;
+  Grund(int _pos,int _pris,int _leje, int _ejer){
+    pos=_pos;
+    pris=_pris;
+    leje=_leje;
+    ejer=_ejer;
   }
-
-
-
-
 }

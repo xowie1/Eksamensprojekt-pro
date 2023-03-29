@@ -33,7 +33,7 @@ class Spiller{
   
   void lykken(){
     if (posPlade%spillepladeFelter == 4 || posPlade%spillepladeFelter == 11 || posPlade%spillepladeFelter == 18 || posPlade%spillepladeFelter == 25 ){
-      mode = int (random(2));
+      //mode = int (random(2));
       if(mode == 0){
       penge += 1000;
     }else{
