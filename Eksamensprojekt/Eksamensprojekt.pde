@@ -28,14 +28,16 @@ void draw(){
 
 void mouseReleased(){
   if(tur == true){
-    println("spiller1");
+  
     
   spiller1.roll();
   spiller1.pengeUpdate();
+  spiller1.lykken();
   tur = !tur;
   }else{
     spiller2.roll();
     spiller2.pengeUpdate();
+    spiller2.lykken();
     tur = !tur;
   }
   
