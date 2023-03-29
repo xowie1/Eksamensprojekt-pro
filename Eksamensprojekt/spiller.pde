@@ -8,7 +8,7 @@ class Spiller{
   
   Spiller(int a,int b,int rr,int gg, int bb,int yTekst){
     spiller=true;
-    spillepladeFelter=32;
+    spillepladeFelter=27;
     spillepladeDIA=650;
     x = a;
     y = b;
@@ -42,7 +42,7 @@ class Spiller{
   }
   
   void pengeUpdate(){
-    if(oldPlade%32 > posPlade%32){
+    if(oldPlade%spillepladeFelter > posPlade%spillepladeFelter){
     penge = penge + 3000;  
     }
   }
