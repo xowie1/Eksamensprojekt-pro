@@ -8,7 +8,7 @@ class Spiller{
   
   Spiller(int a,int b,int rr,int gg, int bb,int yTekst){
     spiller=true;
-    spillepladeFelter=27;
+    spillepladeFelter=29;
     spillepladeDIA=650;
     x = a;
     y = b;
