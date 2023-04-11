@@ -79,12 +79,30 @@ class Spiller{
     penge = penge + 3000;  
     }}
   void grundKøb(){
-    if(spillerNummer == 2){
+    Grund g = grunde.get(posPlade%29);
+    if(keyPressed){
+      if(key == 'y' || key == 'Y'){
+      // Tjek om grunden er ledig
+          if(g.ejer == 0){
+        // Opdater grunden med spillerens nummer som ejer
+          g.ejer = spillerNummer;
+        // Træk grundens pris fra spillerens penge
+          penge -= g.pris;
+        // Opdater grunden i arraylisten
+          grunde.set(posPlade%29, g);
+      }}}
+
+}
+void leje(){
+  Grund g = grunde.get(posPlade%29);
+      if(g.ejer ==0){
+    }else if(g.ejer !=spillerNummer){
+       print(g.leje);
+       penge -= g.leje;
+    }
+
+}
       //hvis grundplade == 0 skal man have mulighed for at købe eller ej
       //men hvis grundplade !=spillernummer || 0 skal man betale til den anden spiller
-    
-    }
-    
-  }
-  
 }
+    

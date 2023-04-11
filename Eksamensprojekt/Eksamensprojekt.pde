@@ -12,18 +12,18 @@ void setup(){
   visPlade = new spillePlade();
   terning1 = new Terning(width/2-30);
   terning2 = new Terning(width/2+30);
-  spiller1 = new Spiller(5,255,135,206,150,30,0);
-  spiller2 = new Spiller(5,285,220, 20, 60,65,1);
-    for(int i = 0; i < 12; i++){
+  spiller1 = new Spiller(5,255,135,206,150,30,1);
+  spiller2 = new Spiller(5,285,220, 20, 60,65,2);
+  for(int i = 0; i < 29; i++){
     grunde.add(new Grund(
     grundData[(4*i)+0],
     grundData[(4*i)+1],
     grundData[(4*i)+2],
     grundData[(4*i)+3]));
   }
-  for(int j =0; j<12; j++){
+  for(int j =0; j<29; j++){
     Grund part = grunde.get(j);
-    println(part.pris);
+    println(part.ejer);
   }
   
 }
@@ -36,23 +36,26 @@ void draw(){
   spiller2.show();
   terning1.show();
   terning2.show();
-  
-  
-  
-}
 
+}
+void keyPressed(){
+  if(tur==false){
+  spiller1.grundKøb();
+  }else{
+  spiller2.grundKøb();
+}}
 void mouseReleased(){
   if(tur == true){
-  
-    
-  spiller1.roll();
-  spiller1.pengeUpdate();
-  spiller1.lykken();
-  tur = !tur;
+    spiller1.roll();
+    spiller1.pengeUpdate();
+    spiller1.lykken();
+    spiller1.leje();
+    tur = !tur;
   }else{
     spiller2.roll();
     spiller2.pengeUpdate();
     spiller2.lykken();
+    spiller2.leje();
     tur = !tur;
   }
   
@@ -63,16 +66,33 @@ void mouseReleased(){
 
 //posistion, pris, leje, ejer
 int[] grundData={
+0,0,0,0,
 1,4000,1000,0,
 2,4000,1000,0,
 3,4000,1000,0,
+4,0,0,0,
 5,3000,500,0,
 6,3000,500,0,
 7,3000,500,0,
 8,5000,2000,0,
 9,5000,2000,0,
 10,5000,2000,0,
+11,0,0,0,
 12,3000,500,0,
 13,3000,500,0,
-14,3000,500,0
+14,3000,500,0,
+15,2000,400,0,
+16,2000,400,0,
+17,2000,400,0,
+18,0,0,0,
+19,4000,1000,0,
+20,4000,1000,0,
+21,4000,1000,0,
+22,3000,500,0,
+23,3000,500,0,
+24,3000,500,0,
+25,0,0,0,
+26,2000,400,0,
+27,2000,400,0,
+28,2000,400,0,
 };
