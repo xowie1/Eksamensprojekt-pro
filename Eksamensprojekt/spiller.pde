@@ -71,8 +71,20 @@ class Spiller{
       textSize(15);
       text("Du taber 1000 kr", width/2-50,height/2);
       
-    }  
+    }
+    Grund g = grunde.get(posPlade%29);
+    if (g.ejer == spillerNummer){
+      push();
+      translate(width/2, height/2);
+      rotate((TWO_PI/spillepladeFelter)*posPlade);
+      fill(r,5,b);
+      rect(x,y+30,20,20);
+      pop();
+    
   }
+  }
+  
+  
   
   void pengeUpdate(){
     if(oldPlade%spillepladeFelter > posPlade%spillepladeFelter){

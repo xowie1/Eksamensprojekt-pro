@@ -9,6 +9,7 @@ ArrayList<Grund> grunde = new ArrayList<Grund>();
 void setup(){
   size(800,800);
   
+  
   visPlade = new spillePlade();
   terning1 = new Terning(width/2-30);
   terning2 = new Terning(width/2+30);
@@ -30,12 +31,16 @@ void setup(){
   
 
 void draw(){
+  
+  
   background(150);
   visPlade.show(150);
   spiller1.show();
   spiller2.show();
   terning1.show();
   terning2.show();
+  
+  
 
 }
 void keyPressed(){
@@ -49,12 +54,14 @@ void mouseReleased(){
     spiller1.roll();
     spiller1.pengeUpdate();
     spiller1.lykken();
+ 
     spiller1.leje();
     tur = !tur;
   }else{
     spiller2.roll();
     spiller2.pengeUpdate();
     spiller2.lykken();
+   
     spiller2.leje();
     tur = !tur;
   }
@@ -71,9 +78,9 @@ int[] grundData={
 2,4000,1000,0,
 3,4000,1000,0,
 4,0,0,0,
-5,3000,500,0,
-6,3000,500,0,
-7,3000,500,0,
+5,2000,500,0,
+6,2000,500,0,
+7,2000,500,0,
 8,5000,2000,0,
 9,5000,2000,0,
 10,5000,2000,0,
