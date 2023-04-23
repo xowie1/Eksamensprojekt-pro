@@ -1,10 +1,11 @@
 class Spiller{
   int spillepladeFelter,spillepladeDIA;
   int posPlade,oldPlade;
-  int penge;
+  int penge, penge2;
   int spillerNummer;
-  int x,y,r,g,b,yText,bKort;
-  int mode;
+  int x,y,r,g,b,yText,bKort,green;
+  int mode, mode2;
+  int xHus, yHus, kop;
   boolean spiller,kort;
   
   
@@ -14,13 +15,17 @@ class Spiller{
     spillepladeDIA=650;
     x = a;
     y = b;
+    xHus = 5;
+    yHus = 230;
     posPlade = 0; 
     penge = 8000;
     r = rr;
     g = gg;
+    green = gg;
     b = bb;
     yText = yTekst;
-    mode = 2; 
+    mode = 2;
+    mode2 = 0;
     bKort = 130;
     kort = true;
     spillerNummer=_spillerNummer;
@@ -42,6 +47,7 @@ class Spiller{
       penge -= 1000;
     }
     }
+    
   }
   
   void show(){
@@ -72,24 +78,29 @@ class Spiller{
       text("Du taber 1000 kr", width/2-50,height/2);
       
     }
-    Grund g = grunde.get(posPlade%29);
-    if (g.ejer == spillerNummer){
+    if (mode2 == 1) {
+    
       push();
+      
       translate(width/2, height/2);
-      rotate((TWO_PI/spillepladeFelter)*posPlade);
-      fill(r,5,b);
-      rect(x,y+30,20,20);
+      rotate((TWO_PI/spillepladeFelter)*kop);
+      fill(r, green, b); 
+      rect(xHus, yHus, 20, 20); 
       pop();
+      
+    
     
   }
   }
   
-  
+
   
   void pengeUpdate(){
     if(oldPlade%spillepladeFelter > posPlade%spillepladeFelter){
     penge = penge + 3000;  
-    }}
+    }
+  }
+  
   void grundKøb(){
     Grund g = grunde.get(posPlade%29);
     if(keyPressed){
@@ -102,17 +113,30 @@ class Spiller{
           penge -= g.pris;
         // Opdater grunden i arraylisten
           grunde.set(posPlade%29, g);
+          mode2 = 1;
+          kop =g.pos;
+          
       }}}
 
 }
 void leje(){
   Grund g = grunde.get(posPlade%29);
-      if(g.ejer ==0){
+      if(g.ejer == 0){
     }else if(g.ejer !=spillerNummer){
        print(g.leje);
        penge -= g.leje;
+       
     }
-
+}
+void modtagLeje(){
+  Grund g = grunde.get(posPlade%29);
+    if(g.ejer ==0){
+    }else if(g.ejer ==spillerNummer){
+       print(g.leje);
+       penge += g.leje;
+       
+    }
+  
 }
       //hvis grundplade == 0 skal man have mulighed for at købe eller ej
       //men hvis grundplade !=spillernummer || 0 skal man betale til den anden spiller

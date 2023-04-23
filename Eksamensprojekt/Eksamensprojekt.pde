@@ -31,8 +31,6 @@ void setup(){
   
 
 void draw(){
-  
-  
   background(150);
   visPlade.show(150);
   spiller1.show();
@@ -56,6 +54,7 @@ void mouseReleased(){
     spiller1.lykken();
  
     spiller1.leje();
+    spiller1.modtagLeje();
     tur = !tur;
   }else{
     spiller2.roll();
@@ -63,6 +62,7 @@ void mouseReleased(){
     spiller2.lykken();
    
     spiller2.leje();
+    spiller2.modtagLeje();
     tur = !tur;
   }
   

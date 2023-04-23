@@ -97,5 +97,7 @@ int spillepladeFelter = 29;
     text("2000 kr",-20,312);
     pop();
     }
+    
+    
   }
 }
