@@ -6,10 +6,9 @@ Spiller spiller2;
 boolean tur = true;
 ArrayList<Grund> grunde = new ArrayList<Grund>();
 
+
 void setup(){
   size(800,800);
-  
-  
   visPlade = new spillePlade();
   terning1 = new Terning(width/2-30);
   terning2 = new Terning(width/2+30);
@@ -22,11 +21,6 @@ void setup(){
     grundData[(4*i)+2],
     grundData[(4*i)+3]));
   }
-  for(int j =0; j<29; j++){
-    Grund part = grunde.get(j);
-    println(part.ejer);
-  }
-  
 }
   
 
@@ -37,6 +31,10 @@ void draw(){
   spiller2.show();
   terning1.show();
   terning2.show();
+  for(int j =0; j<29; j++){
+    Grund part = grunde.get(j);
+    part.show();
+  }
   
   
 
@@ -54,7 +52,7 @@ void mouseReleased(){
     spiller1.lykken();
  
     spiller1.leje();
-    spiller1.modtagLeje();
+    
     tur = !tur;
   }else{
     spiller2.roll();
@@ -62,12 +60,9 @@ void mouseReleased(){
     spiller2.lykken();
    
     spiller2.leje();
-    spiller2.modtagLeje();
+  
     tur = !tur;
   }
-  
-  
-
 }
 
 

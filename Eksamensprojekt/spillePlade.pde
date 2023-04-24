@@ -5,6 +5,8 @@ int indreDiameter = diameter*2/3;
 int spillepladeFelter = 29;
   spillePlade(){
   }
+  
+  //Tegner spilleplade
   void show(int bg){
     fill(255);
     circle(width/2, height/2, diameter);
@@ -18,6 +20,7 @@ int spillepladeFelter = 29;
       pop();
   }
     
+    //Tegner alt teksten på spillepladen
     fill(bg);
     circle(width/2, height/2, indreDiameter);
     fill(60,179,113);
@@ -97,7 +100,5 @@ int spillepladeFelter = 29;
     text("2000 kr",-20,312);
     pop();
     }
-    
-    
   }
 }

@@ -6,6 +6,7 @@ class Terning{
     y = 50;
   }
   
+  //Tegner alle sider på terningen
   void show(){
     rectMode(CENTER);
     if(value == 1){
@@ -66,6 +67,7 @@ class Terning{
     }
   }
   
+  //Slåt med terningen
   int roll(){
     value = int(random(1,7));
     return value;

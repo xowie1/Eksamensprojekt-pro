@@ -1,11 +1,10 @@
 class Spiller{
   int spillepladeFelter,spillepladeDIA;
   int posPlade,oldPlade;
-  int penge, penge2;
+  int penge;
   int spillerNummer;
   int x,y,r,g,b,yText,bKort,green;
-  int mode, mode2;
-  int xHus, yHus, kop;
+  int mode;
   boolean spiller,kort;
   
   
@@ -15,8 +14,6 @@ class Spiller{
     spillepladeDIA=650;
     x = a;
     y = b;
-    xHus = 5;
-    yHus = 230;
     posPlade = 0; 
     penge = 8000;
     r = rr;
@@ -25,12 +22,12 @@ class Spiller{
     b = bb;
     yText = yTekst;
     mode = 2;
-    mode2 = 0;
     bKort = 130;
     kort = true;
     spillerNummer=_spillerNummer;
   }
   
+  //Her slår vi med terningen
   void roll(){
     oldPlade=posPlade;
     posPlade+=terning1.roll();
@@ -38,6 +35,7 @@ class Spiller{
     
   }
   
+  // Her trækker den en tilfældigt kort hvis man lander på et 'prøv lykken' felt
   void lykken(){
     if (posPlade%spillepladeFelter == 4 || posPlade%spillepladeFelter == 11 || posPlade%spillepladeFelter == 18 || posPlade%spillepladeFelter == 25 ){
       mode = int (random(2));
@@ -53,7 +51,11 @@ class Spiller{
   void show(){
     fill(r,g,b);
     textSize(30);
+    
+    //Viser hvor mange penge hver spiller har
     text("Spiller har " + penge + " kr",20,yText);
+    
+    //Viser spilleren
     push();
     translate(width/2, height/2);
       rotate((TWO_PI/spillepladeFelter)*posPlade);
@@ -61,7 +63,7 @@ class Spiller{
       circle(x,y,20);
       pop(); 
     
-    
+    //Viser prøv lykken kortene
     if (mode ==0){
       fill(255);
       rect(width/2,height/2,bKort,bKort/2);
@@ -78,29 +80,17 @@ class Spiller{
       text("Du taber 1000 kr", width/2-50,height/2);
       
     }
-    if (mode2 == 1) {
-    
-      push();
-      
-      translate(width/2, height/2);
-      rotate((TWO_PI/spillepladeFelter)*kop);
-      fill(r, green, b); 
-      rect(xHus, yHus, 20, 20); 
-      pop();
-      
-    
-    
-  }
   }
   
 
-  
+  //Her får man 3000 kr hvis man passerer start
   void pengeUpdate(){
     if(oldPlade%spillepladeFelter > posPlade%spillepladeFelter){
     penge = penge + 3000;  
     }
   }
   
+  //Her køber man en grund
   void grundKøb(){
     Grund g = grunde.get(posPlade%29);
     if(keyPressed){
@@ -112,33 +102,29 @@ class Spiller{
         // Træk grundens pris fra spillerens penge
           penge -= g.pris;
         // Opdater grunden i arraylisten
-          grunde.set(posPlade%29, g);
-          mode2 = 1;
-          kop =g.pos;
-          
+          grunde.set(posPlade%29, g);    
       }}}
 
 }
+
+//Her skal man betale leje hvis man lander på en modsat grund, og ejeren får penge
 void leje(){
+  println(spiller1.penge);
+  println(spiller2.penge);
   Grund g = grunde.get(posPlade%29);
       if(g.ejer == 0){
     }else if(g.ejer !=spillerNummer){
-       print(g.leje);
+       
        penge -= g.leje;
-       
+       if(g.ejer == 1){
+         spiller1.penge+=g.leje;
+       }
+       if(g.ejer == 2){
+         spiller2.penge+=g.leje;
+       }
+       println(spiller1.penge);
+       println(spiller2.penge);
     }
 }
-void modtagLeje(){
-  Grund g = grunde.get(posPlade%29);
-    if(g.ejer ==0){
-    }else if(g.ejer ==spillerNummer){
-       print(g.leje);
-       penge += g.leje;
-       
-    }
-  
-}
-      //hvis grundplade == 0 skal man have mulighed for at købe eller ej
-      //men hvis grundplade !=spillernummer || 0 skal man betale til den anden spiller
 }
     
