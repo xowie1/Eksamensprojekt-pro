@@ -67,7 +67,7 @@ class Terning{
     }
   }
   
-  //Slåt med terningen
+  //Slå med terningen
   int roll(){
     value = int(random(1,7));
     return value;

@@ -27,7 +27,6 @@ int spillepladeFelter = 29;
     textSize(15);
     text("START",width/2-15,715);
     
-    
     for(int j = 1; j < 5; j++){ 
     push();
     translate(width/2, height/2);

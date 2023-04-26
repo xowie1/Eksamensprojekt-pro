@@ -5,31 +5,24 @@ class Grund{
     pris=_pris;
     leje=_leje;
     ejer=_ejer;
-    
   }
   
   //Her tegner den husene på grunden
   void show(){
     if(ejer == 1){
-      push();
-      translate(width/2, height/2);
-      
-      rotate((TWO_PI/29)*pos);
-      
-      fill(135,206,150); 
-      rect(5,230, 20, 20); 
-      pop();
-      } else if(ejer == 2){
         push();
-      translate(width/2, height/2);
-      
-      rotate((TWO_PI/29)*pos);
-      
-      fill(220, 20, 60);
-      rect(5,230, 20, 20); 
-      pop();
-      
-      }
-     
+        translate(width/2, height/2);
+        rotate((TWO_PI/29)*pos);
+        fill(135,206,150); 
+        rect(5,230, 20, 20); 
+        pop();
+    } else if(ejer == 2){
+        push();
+        translate(width/2, height/2);
+        rotate((TWO_PI/29)*pos);
+        fill(220, 20, 60);
+        rect(5,230, 20, 20); 
+        pop();
+    }  
   }
 }

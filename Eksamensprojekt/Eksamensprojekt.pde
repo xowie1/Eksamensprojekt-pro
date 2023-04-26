@@ -6,7 +6,6 @@ Spiller spiller2;
 boolean tur = true;
 ArrayList<Grund> grunde = new ArrayList<Grund>();
 
-
 void setup(){
   size(800,800);
   visPlade = new spillePlade();
@@ -22,8 +21,6 @@ void setup(){
     grundData[(4*i)+3]));
   }
 }
-  
-
 void draw(){
   background(150);
   visPlade.show(150);
@@ -35,9 +32,6 @@ void draw(){
     Grund part = grunde.get(j);
     part.show();
   }
-  
-  
-
 }
 void keyPressed(){
   if(tur==false){
@@ -50,22 +44,16 @@ void mouseReleased(){
     spiller1.roll();
     spiller1.pengeUpdate();
     spiller1.lykken();
- 
     spiller1.leje();
-    
     tur = !tur;
   }else{
     spiller2.roll();
     spiller2.pengeUpdate();
     spiller2.lykken();
-   
     spiller2.leje();
-  
     tur = !tur;
   }
 }
-
-
 //posistion, pris, leje, ejer
 int[] grundData={
 0,0,0,0,

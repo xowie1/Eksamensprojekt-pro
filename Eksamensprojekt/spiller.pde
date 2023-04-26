@@ -32,7 +32,6 @@ class Spiller{
     oldPlade=posPlade;
     posPlade+=terning1.roll();
     posPlade+=terning2.roll();
-    
   }
   
   // Her trækker den en tilfældigt kort hvis man lander på et 'prøv lykken' felt
@@ -45,7 +44,6 @@ class Spiller{
       penge -= 1000;
     }
     }
-    
   }
   
   void show(){
@@ -70,19 +68,15 @@ class Spiller{
       fill(0);
       textSize(15);
       text("Du vandt 1000 kr", width/2-50,height/2);
-      
     }
     if (mode ==1){
       fill(255);
       rect(width/2,height/2,bKort,bKort/2);
       fill(0);
       textSize(15);
-      text("Du taber 1000 kr", width/2-50,height/2);
-      
+      text("Du taber 1000 kr", width/2-50,height/2); 
     }
   }
-  
-
   //Her får man 3000 kr hvis man passerer start
   void pengeUpdate(){
     if(oldPlade%spillepladeFelter > posPlade%spillepladeFelter){
